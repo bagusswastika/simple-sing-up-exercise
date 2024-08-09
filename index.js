@@ -17,7 +17,7 @@ const helloMsg = document.querySelector("#hello-msg");
 // });
 
 function formValidation() {
-  if (firstNameInput.value === "") {
+  if (firstNameInput.value.trim() === "") {
     alertFnMsg.classList.remove("text-success");
     alertFnMsg.classList.add("text-danger");
     alertFnMsg.innerHTML = "First name tidak boleh kosong";
@@ -26,7 +26,7 @@ function formValidation() {
     alertFnMsg.classList.add("text-success");
     alertFnMsg.innerHTML = "Success!";
   }
-  if (lastNameInput.value === "") {
+  if (lastNameInput.value.trim() === "") {
     alertLnMsg.classList.remove("text-success");
     alertLnMsg.classList.add("text-danger");
     alertLnMsg.innerHTML = "Last name tidak boleh kosong";
