@@ -12,7 +12,10 @@ body {
   background-color: white;
   font-weight: 400;
   padding: 3rem 1rem;
-  transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
 }
 
 span {

@@ -11,6 +11,7 @@ const ageValue = document.querySelector("#age-value");
 const fetchSection = document.querySelector(".fetch-section");
 const btnNewData = document.querySelector("#btn-reset");
 const helloMsg = document.querySelector("#hello-msg");
+const symbols = /[!@#$%^&*()_+{}\[\]:;"'<>,.?/~`1234567890]/;
 
 // firstNameInput.addEventListener("input", () => {
 //   firstNameValue.innerHTML = firstNameInput.value;
@@ -21,6 +22,10 @@ function formValidation() {
     alertFnMsg.classList.remove("text-success");
     alertFnMsg.classList.add("text-danger");
     alertFnMsg.innerHTML = "First name tidak boleh kosong";
+  } else if (symbols.test(firstNameInput.value)) {
+    alertFnMsg.classList.remove("text-success");
+    alertFnMsg.classList.add("text-danger");
+    alertFnMsg.innerHTML = "First name tidak boleh berisi angka";
   } else {
     alertFnMsg.classList.remove("text-danger");
     alertFnMsg.classList.add("text-success");
@@ -30,6 +35,10 @@ function formValidation() {
     alertLnMsg.classList.remove("text-success");
     alertLnMsg.classList.add("text-danger");
     alertLnMsg.innerHTML = "Last name tidak boleh kosong";
+  } else if (symbols.test(lastNameInput.value)) {
+    alertLnMsg.classList.remove("text-success");
+    alertLnMsg.classList.add("text-danger");
+    alertLnMsg.innerHTML = "Last name tidak boleh berisi angka";
   } else {
     alertLnMsg.classList.remove("text-danger");
     alertLnMsg.classList.add("text-success");
